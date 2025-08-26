@@ -116,7 +116,7 @@ p {
 
   /* Header & Navigation */
   .site-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
@@ -1976,3 +1976,4 @@ select:focus {
 .summary-card:hover {
   border-color: var(--primary-color);
 }
+
