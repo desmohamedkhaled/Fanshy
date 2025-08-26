@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="سلة المشتريات - Fanshy. راجع طلبك وأكمل عملية الشراء" />
+  <title>سلة المشتريات — Fanshy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <span class="logo">FANSHY</span>
+        <span class="tag">The Grill Experience</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="cartBtn" class="btn small" title="عربة التسوق">
+          🛒 <span id="cartCount">0</span>
+        </button>
+        <button id="mobileToggle" class="btn small" title="القائمة">☰</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav hidden">
+      <a href="index.html">الرئيسية</a>
+      <a href="menu.html">المنيو</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">تواصل</a>
+    </div>
+  </header>
+
+  <main class="section cart-page">
+    <div class="inner">
+      <div class="cart-header">
+        <h1 class="section-title">سلة المشتريات</h1>
+        <p class="section-subtitle">راجع طلبك وأكمل عملية الشراء</p>
+      </div>
+
+      <!-- Cart Items -->
+      <div class="cart-container">
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be populated by JavaScript -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+          <div class="summary-card">
+            <h3>ملخص الطلب</h3>
+            
+            <div class="summary-row">
+              <span>عدد الأصناف:</span>
+              <span id="totalItems">0</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>المجموع الفرعي:</span>
+              <span id="subtotal">0 ج.م</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>التوصيل:</span>
+              <span id="deliveryFee">0 ج.م</span>
+            </div>
+            
+            <div class="summary-row total">
+              <span>المجموع الكلي:</span>
+              <span id="totalAmount">0 ج.م</span>
+            </div>
+
+            <div class="delivery-info">
+              <p>🚚 توصيل مجاني للطلبات أكثر من 200 ج.م</p>
+            </div>
+
+            <button id="checkoutBtn" class="btn primary full-width" disabled>
+              أكمل الطلب
+            </button>
+            
+            <a href="menu.html" class="btn outline full-width">
+              إضافة المزيد
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout Form -->
+      <div class="checkout-form" id="checkoutForm" style="display: none;">
+        <h2>معلومات التوصيل</h2>
+        <form id="orderForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="customerName">الاسم الكامل *</label>
+              <input type="text" id="customerName" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="customerPhone">رقم الهاتف *</label>
+              <input type="tel" id="customerPhone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="customerAddress">العنوان *</label>
+              <textarea id="customerAddress" name="address" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="customerNotes">ملاحظات إضافية</label>
+              <textarea id="customerNotes" name="notes" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="paymentMethod">طريقة الدفع *</label>
+              <select id="paymentMethod" name="payment" required>
+                <option value="">اختر طريقة الدفع</option>
+                <option value="cash">الدفع عند الاستلام</option>
+                <option value="card">بطاقة ائتمان</option>
+                <option value="vodafone">فودافون كاش</option>
+                <option value="etisalat">اتصالات كاش</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="deliveryTime">وقت التوصيل المفضل</label>
+              <select id="deliveryTime" name="deliveryTime">
+                <option value="">في أقرب وقت ممكن</option>
+                <option value="30">خلال 30 دقيقة</option>
+                <option value="60">خلال ساعة</option>
+                <option value="90">خلال ساعة ونصف</option>
+                <option value="120">خلال ساعتين</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" id="backToCart" class="btn outline">العودة للسلة</button>
+            <button type="submit" class="btn primary">تأكيد الطلب</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Order Confirmation -->
+      <div class="order-confirmation" id="orderConfirmation" style="display: none;">
+        <div class="confirmation-card">
+          <div class="success-icon">✅</div>
+          <h2>تم تأكيد طلبك بنجاح!</h2>
+          <p>رقم الطلب: <strong id="orderNumber"></strong></p>
+          <p>سنقوم بالتواصل معك قريباً لتأكيد الطلب</p>
+          <div class="confirmation-actions">
+            <a href="index.html" class="btn primary">العودة للرئيسية</a>
+            <a href="menu.html" class="btn outline">طلب جديد</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fanshy</h3>
+          <p>أفضل مطعم مشاوي في القاهرة</p>
+          <div class="social-links">
+            <a href="#" title="فيسبوك">📘</a>
+            <a href="#" title="انستغرام">📷</a>
+            <a href="#" title="واتساب">📱</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <a href="menu.html">قائمة الطعام</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل</a>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <p>📞 0123-456-789</p>
+          <p>📍 القاهرة، مصر</p>
+          <p>🕒 12:00 م - 12:00 ص</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Fanshy — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
