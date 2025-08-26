@@ -3,24 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fanshy – The Grill Experience</title>
+  <meta name="description" content="Fanshy - أفضل مطعم مشاوي في القاهرة. طعم أصيل وشوي على الفحم مع أجود أنواع اللحوم والتتبيلات السرية." />
+  <meta name="keywords" content="مطعم, مشاوي, كباب, كفتة, شوي, فحم, القاهرة, طعام" />
+  <title>Fanshy – The Grill Experience | مطعم المشاوي الأصيل</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
-  <!-- NAV -->
+  <!-- Navigation -->
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="index.html"><span class="logo">FANSHY</span><span class="tag">The Grill Experience</span></a>
+      <a class="brand" href="index.html">
+        <span class="logo">FANSHY</span>
+        <span class="tag">The Grill Experience</span>
+      </a>
       <nav class="nav">
-        <a href="index.html">الرئيسية</a>
+        <a href="index.html" class="active">الرئيسية</a>
         <a href="menu.html">المنيو</a>
         <a href="about.html">من نحن</a>
         <a href="contact.html">تواصل</a>
       </nav>
       <div class="nav-actions">
-        <button id="cartBtn" class="btn small">🛒 <span id="cartCount">0</span></button>
-        <button id="langToggle" class="btn small">EN</button>
-        <button id="mobileToggle" class="btn small">☰</button>
+        <button id="cartBtn" class="btn small" title="عربة التسوق">
+          🛒 <span id="cartCount">0</span>
+        </button>
+        <button id="mobileToggle" class="btn small" title="القائمة">☰</button>
       </div>
     </div>
     <div id="mobileNav" class="mobile-nav hidden">
@@ -31,72 +38,195 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <h1>FANSHY</h1>
       <p class="hero-sub">The Grill Experience — أشهى المشاوي على الفحم</p>
+      <p class="hero-description">اكتشف طعم المشاوي الأصيل مع أجود أنواع اللحوم والتتبيلات السرية المحضرة يومياً</p>
       <div class="hero-ctas">
-        <a href="menu.html" class="btn primary">اطلب الآن</a>
-        <a href="contact.html#reservation" class="btn outline">احجز طاولة</a>
+        <a href="menu.html" class="btn primary">
+          <span>اطلب الآن</span>
+          <span>→</span>
+        </a>
+        <a href="contact.html#reservation" class="btn outline">
+          <span>احجز طاولة</span>
+          <span>📅</span>
+        </a>
+      </div>
+      <div class="hero-features">
+        <div class="feature">
+          <span class="feature-icon">🔥</span>
+          <span>شوي على الفحم</span>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🥩</span>
+          <span>لحوم طازجة</span>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⭐</span>
+          <span>جودة عالية</span>
+        </div>
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1604908177522-0c8a2b5d1e2e?q=80&w=1600&auto=format&fit=crop" alt="مشاوي">
-    </div>
-  </section>
-
-  <!-- Popular -->
-  <section class="section">
-    <div class="inner">
-      <h2 class="section-title">أشهر الأطباق</h2>
-      <div class="grid dishes">
-        <article class="card dish">
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كباب">
-          <h3>كباب</h3>
-          <p class="muted">من 85 جنيه</p>
-        </article>
-
-        <article class="card dish">
-          <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=800&auto=format&fit=crop" alt="كفتة">
-          <h3>كفتة</h3>
-          <p class="muted">من 70 جنيه</p>
-        </article>
-
-        <article class="card dish">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="ريش">
-          <h3>ريش</h3>
-          <p class="muted">من 120 جنيه</p>
-        </article>
-
-        <article class="card dish">
-          <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="فراخ">
-          <h3>فراخ مشوية</h3>
-          <p class="muted">من 95 جنيه</p>
-        </article>
+      <img src="https://images.unsplash.com/photo-1604908177522-0c8a2b5d1e2e?q=80&w=1600&auto=format&fit=crop" alt="مشاوي Fanshy الطازجة">
+      <div class="hero-badge">
+        <span>🔥</span>
+        <span>طازج يومياً</span>
       </div>
     </div>
   </section>
 
-  <!-- Why -->
+  <!-- Popular Dishes -->
+  <section class="section">
+    <div class="inner">
+      <h2 class="section-title">أشهر الأطباق</h2>
+      <p class="section-subtitle">اكتشف قائمة طعامنا المميزة مع أشهى المشاوي</p>
+      <div class="grid dishes">
+        <article class="card dish" onclick="addToCart('كباب', 85)">
+          <div class="dish-image">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كباب">
+            <div class="dish-overlay">
+              <button class="btn primary">أضف للسلة</button>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3>كباب</h3>
+            <p class="dish-description">لحم طازج متبل ومشوي على الفحم</p>
+            <div class="dish-price">من 85 جنيه</div>
+          </div>
+        </article>
+
+        <article class="card dish" onclick="addToCart('كفتة', 70)">
+          <div class="dish-image">
+            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=800&auto=format&fit=crop" alt="كفتة">
+            <div class="dish-overlay">
+              <button class="btn primary">أضف للسلة</button>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3>كفتة</h3>
+            <p class="dish-description">خلطة خاصة من البهارات والتوابل</p>
+            <div class="dish-price">من 70 جنيه</div>
+          </div>
+        </article>
+
+        <article class="card dish" onclick="addToCart('ريش', 120)">
+          <div class="dish-image">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="ريش">
+            <div class="dish-overlay">
+              <button class="btn primary">أضف للسلة</button>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3>ريش</h3>
+            <p class="dish-description">ريش متبلة ومشوية على الفحم</p>
+            <div class="dish-price">من 120 جنيه</div>
+          </div>
+        </article>
+
+        <article class="card dish" onclick="addToCart('فراخ مشوية', 95)">
+          <div class="dish-image">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="فراخ مشوية">
+            <div class="dish-overlay">
+              <button class="btn primary">أضف للسلة</button>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3>فراخ مشوية</h3>
+            <p class="dish-description">نصف فرخة مشوية مع البطاطس</p>
+            <div class="dish-price">من 95 جنيه</div>
+          </div>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a href="menu.html" class="btn primary">عرض القائمة كاملة</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
   <section class="section alt">
     <div class="inner">
       <h2 class="section-title">ليه تختار Fanshy؟</h2>
+      <p class="section-subtitle">نحن نقدم تجربة طعام فريدة ومميزة</p>
       <div class="grid why">
         <div class="card">
           <div class="icon">🔥</div>
           <h3>طعم أصيل</h3>
-          <p class="muted">شوي على الفحم وتتبيلة سرية</p>
+          <p class="muted">شوي على الفحم وتتبيلة سرية محضرة يومياً بأيدي خبراء</p>
         </div>
         <div class="card">
           <div class="icon">🔍</div>
           <h3>جودة عالية</h3>
-          <p class="muted">مكونات طازة ومعايير نظافة</p>
+          <p class="muted">مكونات طازجة ومعايير نظافة عالية مع ضمان الجودة</p>
         </div>
         <div class="card">
           <div class="icon">💲</div>
           <h3>أسعار مناسبة</h3>
-          <p class="muted">قيمة ممتازة مقابل الجودة</p>
+          <p class="muted">قيمة ممتازة مقابل الجودة مع عروض خاصة دورية</p>
+        </div>
+        <div class="card">
+          <div class="icon">🚚</div>
+          <h3>توصيل سريع</h3>
+          <p class="muted">توصيل مجاني للطلبات الكبيرة مع ضمان الوصول ساخن</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="inner">
+      <h2 class="section-title">آراء عملائنا</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"أفضل مشاوي في القاهرة! الطعم أصيل والجودة ممتازة"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>أحمد محمد</h4>
+              <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"التوصيل سريع والطعام ساخن وطازج. أنصح الجميع"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>فاطمة علي</h4>
+              <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"الأسعار مناسبة والكمية كبيرة. مطعم ممتاز"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>محمد حسن</h4>
+              <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section cta-section">
+    <div class="inner">
+      <div class="cta-content">
+        <h2>جرب طعم المشاوي الأصيل</h2>
+        <p>اطلب الآن واحصل على خصم 10% على أول طلب</p>
+        <div class="cta-buttons">
+          <a href="menu.html" class="btn primary">اطلب الآن</a>
+          <a href="contact.html" class="btn outline">تواصل معنا</a>
         </div>
       </div>
     </div>
@@ -105,12 +235,35 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="inner">
-      <p>© 2025 Fanshy — All rights reserved</p>
-      <p class="muted">الهاتف: 0123-456-789 • العنوان: القاهرة</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fanshy</h3>
+          <p>أفضل مطعم مشاوي في القاهرة</p>
+          <div class="social-links">
+            <a href="#" title="فيسبوك">📘</a>
+            <a href="#" title="انستغرام">📷</a>
+            <a href="#" title="واتساب">📱</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <a href="menu.html">قائمة الطعام</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل</a>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <p>📞 0123-456-789</p>
+          <p>📍 القاهرة، مصر</p>
+          <p>🕒 12:00 م - 12:00 ص</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Fanshy — جميع الحقوق محفوظة</p>
+      </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
