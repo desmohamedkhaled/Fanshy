@@ -3,36 +3,226 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="تعرف على قصة Fanshy - مطعم المشاوي الأصيل في القاهرة. خبرة 20 سنة في الشوي على الفحم مع أجود أنواع اللحوم." />
   <title>من نحن — Fanshy</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="index.html"><span class="logo">FANSHY</span><span class="tag">The Grill Experience</span></a>
+      <a class="brand" href="index.html">
+        <span class="logo">FANSHY</span>
+        <span class="tag">The Grill Experience</span>
+      </a>
       <nav class="nav">
         <a href="index.html">الرئيسية</a>
         <a href="menu.html">المنيو</a>
         <a href="about.html" class="active">من نحن</a>
         <a href="contact.html">تواصل</a>
       </nav>
+      <div class="nav-actions">
+        <button id="cartBtn" class="btn small" title="عربة التسوق">
+          🛒 <span id="cartCount">0</span>
+        </button>
+        <button id="mobileToggle" class="btn small" title="القائمة">☰</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav hidden">
+      <a href="index.html">الرئيسية</a>
+      <a href="menu.html">المنيو</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">تواصل</a>
     </div>
   </header>
 
-  <main class="section">
-    <div class="inner about">
+  <main class="section about-page">
+    <div class="inner">
+      <div class="about-header">
       <h1 class="section-title">قصتنا</h1>
-      <p>Fanshy بدت كعائلة صغيرة بتقدم مشاوي على الفحم بنكهة أصيلة. هدفنا نوفّر تجربة طعام ترجع بالزبون لأول مرة يذوق فيها مشوي على أصله.</p>
-      <p class="muted">نستخدم لحوم مختارة، تتبيلات محضرة يومياً، وشيف بخبرة طويلة في المشاوي.</p>
-      <div class="team-grid">
-        <div class="card"> <img src="https://images.unsplash.com/photo-1541542684-1254a2f5c1a4?q=80&w=800&auto=format&fit=crop" alt="شيف"><h4>الشيف: أحمد</h4><p class="muted">ماهر في الشوي</p></div>
-        <div class="card"> <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="مطبخ"><h4>المطبخ</h4><p class="muted">نظافة وجودة</p></div>
+        <p class="section-subtitle">اكتشف قصة Fanshy وكيف بدأنا رحلتنا في عالم المشاوي</p>
       </div>
+
+      <!-- Story Section -->
+      <section class="story-section">
+        <div class="story-content">
+          <div class="story-text">
+            <h2>بداية القصة</h2>
+      <p>Fanshy بدت كعائلة صغيرة بتقدم مشاوي على الفحم بنكهة أصيلة. هدفنا نوفّر تجربة طعام ترجع بالزبون لأول مرة يذوق فيها مشوي على أصله.</p>
+            <p>منذ أكثر من 20 سنة، ونحن نعمل على تطوير وصفاتنا السرية وتقنيات الشوي لدينا. كل طبق نقدمه يحمل قصة عائلية وتراث طويل من الخبرة.</p>
+            <div class="story-stats">
+              <div class="stat">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">سنة خبرة</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">عميل سعيد</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">جودة مضمونة</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="مطبخ Fanshy">
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section class="values-section">
+        <h2 class="section-title">قيمنا</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🔥</div>
+            <h3>الأصالة</h3>
+            <p>نحافظ على الطعم الأصيل للمشاوي المصرية مع الحفاظ على التقاليد العائلية</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⭐</div>
+            <h3>الجودة</h3>
+            <p>نستخدم أجود أنواع اللحوم والمكونات الطازجة مع معايير نظافة عالية</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">❤️</div>
+            <h3>الاهتمام</h3>
+            <p>نعطي اهتمام خاص لكل طلب ونسعى لإرضاء كل عميل</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🚀</div>
+            <h3>الابتكار</h3>
+            <p>نطور وصفاتنا باستمرار مع الحفاظ على الطعم التقليدي</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <h2 class="section-title">فريق العمل</h2>
+        <p class="section-subtitle">تعرف على الفريق المتميز الذي يجعل Fanshy مميزاً</p>
+      <div class="team-grid">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1541542684-1254a2f5c1a4?q=80&w=800&auto=format&fit=crop" alt="الشيف أحمد">
+            </div>
+            <div class="team-info">
+              <h3>الشيف أحمد</h3>
+              <p class="team-role">شيف رئيسي</p>
+              <p class="team-description">خبرة 15 سنة في الشوي على الفحم. متخصص في التتبيلات السرية</p>
+              <div class="team-skills">
+                <span class="skill">شوي على الفحم</span>
+                <span class="skill">تتبيلات سرية</span>
+                <span class="skill">جودة عالية</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="فريق المطبخ">
+            </div>
+            <div class="team-info">
+              <h3>فريق المطبخ</h3>
+              <p class="team-role">فريق متخصص</p>
+              <p class="team-description">فريق متميز من الطهاة المتخصصين في المشاوي والكباب</p>
+              <div class="team-skills">
+                <span class="skill">مشاوي</span>
+                <span class="skill">كباب</span>
+                <span class="skill">نظافة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" alt="فريق الخدمة">
+            </div>
+            <div class="team-info">
+              <h3>فريق الخدمة</h3>
+              <p class="team-role">خدمة عملاء</p>
+              <p class="team-description">فريق خدمة متميز يضمن تجربة ممتعة لكل عميل</p>
+              <div class="team-skills">
+                <span class="skill">خدمة ممتازة</span>
+                <span class="skill">سرعة في التوصيل</span>
+                <span class="skill">اهتمام بالعميل</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="process-section">
+        <h2 class="section-title">كيف نعمل</h2>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>اختيار اللحوم</h3>
+            <p>نختار أجود أنواع اللحوم الطازجة يومياً من موردين موثوقين</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>التتبيل</h3>
+            <p>نستخدم تتبيلات سرية محضرة يومياً بأيدي خبراء</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>الشوي</h3>
+            <p>شوي على الفحم الطبيعي بدرجة حرارة مثالية</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>التقديم</h3>
+            <p>تقديم ساخن وطازج مع أطباق جانبية مميزة</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>جرب طعم الأصالة</h2>
+          <p>اطلب الآن واستمتع بأشهى المشاوي في القاهرة</p>
+          <div class="cta-buttons">
+            <a href="menu.html" class="btn primary">اطلب الآن</a>
+            <a href="contact.html" class="btn outline">تواصل معنا</a>
+      </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="inner"><p>© 2025 Fanshy</p></div>
+    <div class="inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fanshy</h3>
+          <p>أفضل مطعم مشاوي في القاهرة</p>
+          <div class="social-links">
+            <a href="#" title="فيسبوك">📘</a>
+            <a href="#" title="انستغرام">📷</a>
+            <a href="#" title="واتساب">📱</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <a href="menu.html">قائمة الطعام</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل</a>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <p>📞 0123-456-789</p>
+          <p>📍 القاهرة، مصر</p>
+          <p>🕒 12:00 م - 12:00 ص</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Fanshy — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
