@@ -18,22 +18,35 @@
         <a href="contact.html">تواصل</a>
       </nav>
       <div class="nav-actions">
-        <button id="cartBtn2" class="btn small">🛒 <span id="cartCount2">0</span></button>
-        <button id="mobileToggle2" class="btn small">☰</button>
+        <button id="cartBtn2" class="btn small" title="عربة التسوق">
+          🛒 <span id="cartCount2">0</span>
+        </button>
+        <button id="mobileToggle2" class="btn small" title="القائمة">☰</button>
       </div>
     </div>
   </header>
 
-  <main class="section">
+  <main class="section menu-page">
     <div class="inner">
-      <h1 class="section-title">قائمة الطعام</h1>
+      <div class="menu-header">
+        <h1 class="section-title">قائمة الطعام</h1>
+        <p class="section-subtitle">اكتشف أشهى المشاوي والكباب مع أجود أنواع اللحوم والتتبيلات السرية</p>
+      </div>
 
-      <!-- Categories + items -->
-      <section class="menu-category">
-        <h2>المشاوي</h2>
+      <!-- Menu Categories -->
+      <div class="menu-categories">
+        <button class="category-btn active" data-category="all">الكل</button>
+        <button class="category-btn" data-category="grills">المشاوي</button>
+        <button class="category-btn" data-category="kebabs">الكباب</button>
+        <button class="category-btn" data-category="sides">الأطباق الجانبية</button>
+        <button class="category-btn" data-category="drinks">المشروبات</button>
+      </div>
+
+      <!-- Menu Items -->
+      <section class="menu-category" data-category="grills">
+        <h2 class="category-title">المشاوي</h2>
         <div class="menu-grid">
-          <!-- item template -->
-          <article class="menu-item card" data-name="كباب" data-price="85">
+          <article class="menu-item card" data-name="كباب" data-price="85" data-category="grills">
             <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كباب">
             <div class="meta">
               <h3>كباب</h3>
@@ -45,11 +58,11 @@
             </div>
           </article>
 
-          <article class="menu-item card" data-name="كفتة" data-price="70">
+          <article class="menu-item card" data-name="كفتة" data-price="70" data-category="grills">
             <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=800&auto=format&fit=crop" alt="كفتة">
             <div class="meta">
               <h3>كفتة</h3>
-              <p class="muted">خلطة خاصة من البهارات</p>
+              <p class="muted">خلطة خاصة من البهارات والتوابل</p>
               <div class="row">
                 <div class="price">70 ج.م</div>
                 <button class="btn add-to-cart">أضف للسلة</button>
@@ -57,11 +70,11 @@
             </div>
           </article>
 
-          <article class="menu-item card" data-name="ريش" data-price="120">
+          <article class="menu-item card" data-name="ريش" data-price="120" data-category="grills">
             <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="ريش">
             <div class="meta">
               <h3>ريش</h3>
-              <p class="muted">ريش متبلة ومشوية</p>
+              <p class="muted">ريش متبلة ومشوية على الفحم</p>
               <div class="row">
                 <div class="price">120 ج.م</div>
                 <button class="btn add-to-cart">أضف للسلة</button>
@@ -69,8 +82,8 @@
             </div>
           </article>
 
-          <article class="menu-item card" data-name="فراخ مشوية" data-price="95">
-            <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="فراخ">
+          <article class="menu-item card" data-name="فراخ مشوية" data-price="95" data-category="grills">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="فراخ مشوية">
             <div class="meta">
               <h3>فراخ مشوية</h3>
               <p class="muted">نصف فرخة مشوية مع البطاطس</p>
@@ -80,12 +93,163 @@
               </div>
             </div>
           </article>
+
+          <article class="menu-item card" data-name="لحم مشوي" data-price="150" data-category="grills">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="لحم مشوي">
+            <div class="meta">
+              <h3>لحم مشوي</h3>
+              <p class="muted">قطع لحم طازجة مشوية على الفحم</p>
+              <div class="row">
+                <div class="price">150 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="كبدة مشوية" data-price="80" data-category="grills">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كبدة مشوية">
+            <div class="meta">
+              <h3>كبدة مشوية</h3>
+              <p class="muted">كبدة طازجة مشوية مع البصل</p>
+              <div class="row">
+                <div class="price">80 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
+      <section class="menu-category" data-category="kebabs">
+        <h2 class="category-title">الكباب</h2>
+        <div class="menu-grid">
+          <article class="menu-item card" data-name="كباب دجاج" data-price="75" data-category="kebabs">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="كباب دجاج">
+            <div class="meta">
+              <h3>كباب دجاج</h3>
+              <p class="muted">قطع دجاج متبلة ومشوية</p>
+              <div class="row">
+                <div class="price">75 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="كباب لحم" data-price="90" data-category="kebabs">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كباب لحم">
+            <div class="meta">
+              <h3>كباب لحم</h3>
+              <p class="muted">قطع لحم طازجة متبلة</p>
+              <div class="row">
+                <div class="price">90 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="كباب مشكل" data-price="110" data-category="kebabs">
+            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=800&auto=format&fit=crop" alt="كباب مشكل">
+            <div class="meta">
+              <h3>كباب مشكل</h3>
+              <p class="muted">مزيج من الدجاج واللحم</p>
+              <div class="row">
+                <div class="price">110 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" data-category="sides">
+        <h2 class="category-title">الأطباق الجانبية</h2>
+        <div class="menu-grid">
+          <article class="menu-item card" data-name="بطاطس مقلية" data-price="25" data-category="sides">
+            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=800&auto=format&fit=crop" alt="بطاطس مقلية">
+            <div class="meta">
+              <h3>بطاطس مقلية</h3>
+              <p class="muted">بطاطس طازجة مقلية</p>
+              <div class="row">
+                <div class="price">25 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="أرز" data-price="20" data-category="sides">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=800&auto=format&fit=crop" alt="أرز">
+            <div class="meta">
+              <h3>أرز</h3>
+              <p class="muted">أرز مصري طازج</p>
+              <div class="row">
+                <div class="price">20 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="سلطة خضراء" data-price="30" data-category="sides">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="سلطة خضراء">
+            <div class="meta">
+              <h3>سلطة خضراء</h3>
+              <p class="muted">خضروات طازجة مع زيت الزيتون</p>
+              <div class="row">
+                <div class="price">30 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" data-category="drinks">
+        <h2 class="category-title">المشروبات</h2>
+        <div class="menu-grid">
+          <article class="menu-item card" data-name="عصير برتقال" data-price="15" data-category="drinks">
+            <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?q=80&w=800&auto=format&fit=crop" alt="عصير برتقال">
+            <div class="meta">
+              <h3>عصير برتقال</h3>
+              <p class="muted">عصير برتقال طازج</p>
+              <div class="row">
+                <div class="price">15 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="عصير ليمون" data-price="12" data-category="drinks">
+            <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=800&auto=format&fit=crop" alt="عصير ليمون">
+            <div class="meta">
+              <h3>عصير ليمون</h3>
+              <p class="muted">عصير ليمون طازج</p>
+              <div class="row">
+                <div class="price">12 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="مياه غازية" data-price="8" data-category="drinks">
+            <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?q=80&w=800&auto=format&fit=crop" alt="مياه غازية">
+            <div class="meta">
+              <h3>مياه غازية</h3>
+              <p class="muted">كوكا كولا، بيبسي، سفن أب</p>
+              <div class="row">
+                <div class="price">8 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Checkout Bar -->
       <div class="checkout-bar card">
-        <div>السلة: <span id="cartSummary">0 صنف - 0 ج.م</span></div>
-        <div>
+        <div class="checkout-info">
+          <div class="cart-summary">السلة: <span id="cartSummary">0 صنف - 0 ج.م</span></div>
+          <div class="delivery-info">🚚 توصيل مجاني للطلبات أكثر من 200 ج.م</div>
+        </div>
+        <div class="checkout-actions">
           <button id="viewCartBtn" class="btn outline">عرض السلة</button>
           <button id="checkoutBtn" class="btn primary">ادفع الآن</button>
         </div>
@@ -94,7 +258,34 @@
   </main>
 
   <footer class="site-footer">
-    <div class="inner"><p>© 2025 Fanshy</p></div>
+    <div class="inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fanshy</h3>
+          <p>أفضل مطعم مشاوي في القاهرة</p>
+          <div class="social-links">
+            <a href="#" title="فيسبوك">📘</a>
+            <a href="#" title="انستغرام">📷</a>
+            <a href="#" title="واتساب">📱</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <a href="menu.html">قائمة الطعام</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل</a>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <p>📞 0123-456-789</p>
+          <p>📍 القاهرة، مصر</p>
+          <p>🕒 12:00 م - 12:00 ص</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Fanshy — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
