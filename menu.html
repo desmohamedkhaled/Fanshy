@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>قائمة الطعام — Fanshy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- reuse same header -->
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html"><span class="logo">FANSHY</span><span class="tag">The Grill Experience</span></a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html" class="active">المنيو</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="cartBtn2" class="btn small">🛒 <span id="cartCount2">0</span></button>
+        <button id="mobileToggle2" class="btn small">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="inner">
+      <h1 class="section-title">قائمة الطعام</h1>
+
+      <!-- Categories + items -->
+      <section class="menu-category">
+        <h2>المشاوي</h2>
+        <div class="menu-grid">
+          <!-- item template -->
+          <article class="menu-item card" data-name="كباب" data-price="85">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop" alt="كباب">
+            <div class="meta">
+              <h3>كباب</h3>
+              <p class="muted">لحم طازج متبل ومشوي على الفحم</p>
+              <div class="row">
+                <div class="price">85 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="كفتة" data-price="70">
+            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=800&auto=format&fit=crop" alt="كفتة">
+            <div class="meta">
+              <h3>كفتة</h3>
+              <p class="muted">خلطة خاصة من البهارات</p>
+              <div class="row">
+                <div class="price">70 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="ريش" data-price="120">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="ريش">
+            <div class="meta">
+              <h3>ريش</h3>
+              <p class="muted">ريش متبلة ومشوية</p>
+              <div class="row">
+                <div class="price">120 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-item card" data-name="فراخ مشوية" data-price="95">
+            <img src="https://images.unsplash.com/photo-1543353071-087092ec3931?q=80&w=800&auto=format&fit=crop" alt="فراخ">
+            <div class="meta">
+              <h3>فراخ مشوية</h3>
+              <p class="muted">نصف فرخة مشوية مع البطاطس</p>
+              <div class="row">
+                <div class="price">95 ج.م</div>
+                <button class="btn add-to-cart">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="checkout-bar card">
+        <div>السلة: <span id="cartSummary">0 صنف - 0 ج.م</span></div>
+        <div>
+          <button id="viewCartBtn" class="btn outline">عرض السلة</button>
+          <button id="checkoutBtn" class="btn primary">ادفع الآن</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner"><p>© 2025 Fanshy</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

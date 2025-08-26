@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تواصل معنا — Fanshy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html"><span class="logo">FANSHY</span><span class="tag">The Grill Experience</span></a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html" class="active">تواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="inner">
+      <h1 class="section-title">تواصل معنا</h1>
+      <div class="grid contact-grid">
+        <div class="card contact-card">
+          <h3>احجز أو اطلب عبر الهاتف</h3>
+          <p class="muted">0123-456-789</p>
+          <h3>العنوان</h3>
+          <p class="muted">القاهرة، مصر</p>
+        </div>
+
+        <div class="card">
+          <form id="contactForm">
+            <label>الاسم</label>
+            <input type="text" id="cf-name" required>
+            <label>الهاتف</label>
+            <input type="tel" id="cf-phone" required>
+            <label>الرسالة</label>
+            <textarea id="cf-msg" rows="5" required></textarea>
+            <div class="row">
+              <button class="btn primary" type="submit">إرسال</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="reservation" class="card reservation">
+        <h3>احجز طاولة</h3>
+        <form id="reservationForm">
+          <div class="row">
+            <input type="text" id="res-name" placeholder="الاسم" required>
+            <input type="tel" id="res-phone" placeholder="الهاتف" required>
+          </div>
+          <div class="row">
+            <input type="date" id="res-date" required>
+            <input type="time" id="res-time" required>
+          </div>
+          <div class="row">
+            <input type="number" id="res-guests" min="1" value="2" required>
+            <button class="btn primary" type="submit">احجز</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner"><p>© 2025 Fanshy</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
