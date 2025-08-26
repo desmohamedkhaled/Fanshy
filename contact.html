@@ -3,69 +3,263 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="تواصل مع Fanshy - احجز طاولة أو اطلب توصيل. هاتف: 0123-456-789. العنوان: القاهرة، مصر." />
   <title>تواصل معنا — Fanshy</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="index.html"><span class="logo">FANSHY</span><span class="tag">The Grill Experience</span></a>
+      <a class="brand" href="index.html">
+        <span class="logo">FANSHY</span>
+        <span class="tag">The Grill Experience</span>
+      </a>
       <nav class="nav">
         <a href="index.html">الرئيسية</a>
         <a href="menu.html">المنيو</a>
         <a href="about.html">من نحن</a>
         <a href="contact.html" class="active">تواصل</a>
       </nav>
+      <div class="nav-actions">
+        <button id="cartBtn" class="btn small" title="عربة التسوق">
+          🛒 <span id="cartCount">0</span>
+        </button>
+        <button id="mobileToggle" class="btn small" title="القائمة">☰</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav hidden">
+      <a href="index.html">الرئيسية</a>
+      <a href="menu.html">المنيو</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html">تواصل</a>
     </div>
   </header>
 
-  <main class="section">
+  <main class="section contact-page">
     <div class="inner">
+      <div class="contact-header">
       <h1 class="section-title">تواصل معنا</h1>
-      <div class="grid contact-grid">
-        <div class="card contact-card">
-          <h3>احجز أو اطلب عبر الهاتف</h3>
-          <p class="muted">0123-456-789</p>
+        <p class="section-subtitle">احجز طاولة، اطلب توصيل، أو تواصل معنا لأي استفسار</p>
+      </div>
+
+      <!-- Contact Info Section -->
+      <section class="contact-info-section">
+        <div class="contact-info-grid">
+          <div class="contact-info-card">
+            <div class="contact-icon">📞</div>
+            <h3>اتصل بنا</h3>
+            <p class="contact-detail">0123-456-789</p>
+            <p class="contact-note">متاح من 12:00 م - 12:00 ص</p>
+          </div>
+          
+          <div class="contact-info-card">
+            <div class="contact-icon">📍</div>
           <h3>العنوان</h3>
-          <p class="muted">القاهرة، مصر</p>
+            <p class="contact-detail">القاهرة، مصر</p>
+            <p class="contact-note">شارع المشاوي، حي المطاعم</p>
+          </div>
+          
+          <div class="contact-info-card">
+            <div class="contact-icon">🕒</div>
+            <h3>ساعات العمل</h3>
+            <p class="contact-detail">12:00 م - 12:00 ص</p>
+            <p class="contact-note">يومياً</p>
+          </div>
+          
+          <div class="contact-info-card">
+            <div class="contact-icon">🚚</div>
+            <h3>التوصيل</h3>
+            <p class="contact-detail">توصيل مجاني</p>
+            <p class="contact-note">للطلبات أكثر من 200 ج.م</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Forms Section -->
+      <section class="contact-forms-section">
+        <div class="forms-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h2>رسالة لنا</h2>
+            <p class="form-description">أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن</p>
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="cf-name">الاسم الكامل</label>
+                <input type="text" id="cf-name" name="name" required placeholder="أدخل اسمك الكامل">
+              </div>
+              
+              <div class="form-group">
+                <label for="cf-phone">رقم الهاتف</label>
+                <input type="tel" id="cf-phone" name="phone" required placeholder="أدخل رقم هاتفك">
+              </div>
+              
+              <div class="form-group">
+                <label for="cf-email">البريد الإلكتروني</label>
+                <input type="email" id="cf-email" name="email" placeholder="أدخل بريدك الإلكتروني">
+              </div>
+              
+              <div class="form-group">
+                <label for="cf-subject">الموضوع</label>
+                <select id="cf-subject" name="subject" required>
+                  <option value="">اختر الموضوع</option>
+                  <option value="استفسار">استفسار عام</option>
+                  <option value="شكوى">شكوى</option>
+                  <option value="اقتراح">اقتراح</option>
+                  <option value="تعاون">طلب تعاون</option>
+                </select>
         </div>
 
-        <div class="card">
-          <form id="contactForm">
-            <label>الاسم</label>
-            <input type="text" id="cf-name" required>
-            <label>الهاتف</label>
-            <input type="tel" id="cf-phone" required>
-            <label>الرسالة</label>
-            <textarea id="cf-msg" rows="5" required></textarea>
-            <div class="row">
-              <button class="btn primary" type="submit">إرسال</button>
+              <div class="form-group">
+                <label for="cf-msg">الرسالة</label>
+                <textarea id="cf-msg" name="message" rows="5" required placeholder="اكتب رسالتك هنا..."></textarea>
             </div>
+              
+              <button type="submit" class="btn primary">إرسال الرسالة</button>
           </form>
         </div>
+
+          <!-- Reservation Form -->
+          <div class="reservation-form-card">
+            <h2>احجز طاولة</h2>
+            <p class="form-description">احجز طاولة في مطعمنا واستمتع بتجربة طعام مميزة</p>
+            <form id="reservationForm" class="reservation-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-name">الاسم الكامل</label>
+                  <input type="text" id="res-name" name="name" required placeholder="أدخل اسمك">
+                </div>
+                
+                <div class="form-group">
+                  <label for="res-phone">رقم الهاتف</label>
+                  <input type="tel" id="res-phone" name="phone" required placeholder="أدخل رقم هاتفك">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-date">التاريخ</label>
+                  <input type="date" id="res-date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="res-time">الوقت</label>
+                  <input type="time" id="res-time" name="time" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="res-guests">عدد الأشخاص</label>
+                  <select id="res-guests" name="guests" required>
+                    <option value="">اختر العدد</option>
+                    <option value="1">شخص واحد</option>
+                    <option value="2" selected>شخصين</option>
+                    <option value="3">3 أشخاص</option>
+                    <option value="4">4 أشخاص</option>
+                    <option value="5">5 أشخاص</option>
+                    <option value="6">6 أشخاص</option>
+                    <option value="7+">أكثر من 6</option>
+                  </select>
       </div>
-      <div id="reservation" class="card reservation">
-        <h3>احجز طاولة</h3>
-        <form id="reservationForm">
-          <div class="row">
-            <input type="text" id="res-name" placeholder="الاسم" required>
-            <input type="tel" id="res-phone" placeholder="الهاتف" required>
+                
+                <div class="form-group">
+                  <label for="res-occasion">المناسبة</label>
+                  <select id="res-occasion" name="occasion">
+                    <option value="">اختر المناسبة</option>
+                    <option value="عشاء عائلي">عشاء عائلي</option>
+                    <option value="موعد رومانسي">موعد رومانسي</option>
+                    <option value="اجتماع عمل">اجتماع عمل</option>
+                    <option value="احتفال">احتفال</option>
+                    <option value="أخرى">أخرى</option>
+                  </select>
           </div>
-          <div class="row">
-            <input type="date" id="res-date" required>
-            <input type="time" id="res-time" required>
           </div>
-          <div class="row">
-            <input type="number" id="res-guests" min="1" value="2" required>
-            <button class="btn primary" type="submit">احجز</button>
+              
+              <div class="form-group">
+                <label for="res-notes">ملاحظات إضافية</label>
+                <textarea id="res-notes" name="notes" rows="3" placeholder="أي ملاحظات أو طلبات خاصة..."></textarea>
           </div>
+              
+              <button type="submit" class="btn primary">تأكيد الحجز</button>
         </form>
       </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="map-section">
+        <h2 class="section-title">موقعنا</h2>
+        <div class="map-container">
+          <div class="map-placeholder">
+            <div class="map-content">
+              <div class="map-icon">📍</div>
+              <h3>Fanshy Restaurant</h3>
+              <p>شارع المشاوي، حي المطاعم</p>
+              <p>القاهرة، مصر</p>
+              <a href="https://maps.google.com" target="_blank" class="btn outline">فتح في الخرائط</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <h2 class="section-title">الأسئلة الشائعة</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>هل تقدمون خدمة التوصيل؟</h3>
+            <p>نعم، نقدم خدمة التوصيل لجميع المناطق القريبة. التوصيل مجاني للطلبات أكثر من 200 ج.م.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>ما هي ساعات العمل؟</h3>
+            <p>نحن مفتوحون يومياً من 12:00 ظهراً حتى 12:00 منتصف الليل.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>هل يمكن الحجز مسبقاً؟</h3>
+            <p>نعم، يمكنك الحجز مسبقاً عبر الهاتف أو من خلال النموذج أعلاه.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>هل تقدمون خيارات للنباتيين؟</h3>
+            <p>نعم، لدينا مجموعة متنوعة من الأطباق النباتية والسلطات الطازجة.</p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="inner"><p>© 2025 Fanshy</p></div>
+    <div class="inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fanshy</h3>
+          <p>أفضل مطعم مشاوي في القاهرة</p>
+          <div class="social-links">
+            <a href="#" title="فيسبوك">📘</a>
+            <a href="#" title="انستغرام">📷</a>
+            <a href="#" title="واتساب">📱</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <a href="menu.html">قائمة الطعام</a>
+          <a href="about.html">من نحن</a>
+          <a href="contact.html">تواصل</a>
+        </div>
+        <div class="footer-section">
+          <h4>معلومات الاتصال</h4>
+          <p>📞 0123-456-789</p>
+          <p>📍 القاهرة، مصر</p>
+          <p>🕒 12:00 م - 12:00 ص</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Fanshy — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
