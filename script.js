@@ -1,6 +1,32 @@
 /* Enhanced Shopping Cart System */
 
+// Dark Mode Toggle
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  
+  // Check for saved theme preference or default to 'light'
+  const currentTheme = localStorage.getItem('fanshy_theme') || 'light';
+  html.setAttribute('data-theme', currentTheme);
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('fanshy_theme', newTheme);
+      
+      // Show notification
+      showNotification(`تم التبديل إلى الوضع ${newTheme === 'dark' ? 'المظلم' : 'الفاتح'}`);
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize theme toggle
+  initThemeToggle();
+  
   // Cart Management
   const CART_KEY = 'fanshy_cart_v2';
   let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
@@ -235,28 +261,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event Listeners
   function setupEventListeners() {
     // Mobile navigation
-    const mobileToggle = document.getElementById('mobileToggle') || document.getElementById('mobileToggle2');
-    const mobileNav = document.getElementById('mobileNav');
+  const mobileToggle = document.getElementById('mobileToggle') || document.getElementById('mobileToggle2');
+  const mobileNav = document.getElementById('mobileNav');
     
     if (mobileToggle && mobileNav) {
       mobileToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-      });
-    }
+      mobileNav.classList.toggle('hidden');
+    });
+  }
 
     // Add to cart buttons
     document.querySelectorAll('.add-to-cart').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const itemEl = e.target.closest('.menu-item');
+      const itemEl = e.target.closest('.menu-item');
         if (itemEl) {
-          const name = itemEl.dataset.name || itemEl.querySelector('h3')?.textContent || 'صنف';
+      const name = itemEl.dataset.name || itemEl.querySelector('h3')?.textContent || 'صنف';
           const price = Number(itemEl.dataset.price || itemEl.querySelector('.price')?.textContent.replace(/[^\d]/g, '') || 0);
           const image = itemEl.querySelector('img')?.src;
           addToCart(name, price, image);
         }
-      });
     });
+  });
 
     // Checkout button
     const checkoutBtn = document.getElementById('checkoutBtn');
@@ -322,23 +348,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Contact form handling
   function setupContactForms() {
-    const contactForm = document.getElementById('contactForm');
+  const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+      e.preventDefault();
         const name = document.getElementById('cf-name')?.value;
         const phone = document.getElementById('cf-phone')?.value;
         const msg = document.getElementById('cf-msg')?.value;
         
         showNotification(`شكراً ${name}، تم استلام رسالتك. سنعاود الاتصال على ${phone}`);
-        contactForm.reset();
-      });
-    }
+      contactForm.reset();
+    });
+  }
 
     const reservationForm = document.getElementById('reservationForm');
     if (reservationForm) {
       reservationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+      e.preventDefault();
         const name = document.getElementById('res-name')?.value;
         const phone = document.getElementById('res-phone')?.value;
         const date = document.getElementById('res-date')?.value;
